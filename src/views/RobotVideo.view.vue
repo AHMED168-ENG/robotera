@@ -1,10 +1,10 @@
 <template>
-    <div class="robot_details">
-        <RobotVideo></RobotVideo>
-        <RobotDescriptionComponent></RobotDescriptionComponent>
-        <robotAdvantagesComponent></robotAdvantagesComponent>
-        <UpperFooterComponent></UpperFooterComponent>
-    </div>
+  <div class="robot_details">
+    <RobotVideo></RobotVideo>
+    <RobotDescriptionComponent></RobotDescriptionComponent>
+    <robotAdvantagesComponent></robotAdvantagesComponent>
+    <UpperFooterComponent></UpperFooterComponent>
+  </div>
 </template>
 
 <script>
@@ -14,18 +14,20 @@ import robotAdvantagesComponent from "@/components/robot_video/RobotAdvantages.c
 import UpperFooterComponent from "@/components/layouts/UpprtFooter.component.vue";
 
 export default {
-    name: "RobotDetailsView",
-    components: {
-        RobotVideo,
-        RobotDescriptionComponent,
-        robotAdvantagesComponent,
-        UpperFooterComponent,
-    },
-    created() {
-        window.scrollTo({
-            top: 0,
-            behavior: "instant",
-        });
-    },
+  name: "RobotDetailsView",
+  components: {
+    RobotVideo,
+    RobotDescriptionComponent,
+    robotAdvantagesComponent,
+    UpperFooterComponent,
+  },
+  created() {
+    this.$store.commit("setPage", "store");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  },
 };
 </script>

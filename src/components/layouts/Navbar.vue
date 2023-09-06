@@ -16,7 +16,14 @@
               <div class="nav_wrapper">
                 <ul class="list-unstyled d-flex">
                   <li>
-                    <router-link to="/">
+                    <router-link
+                      to="/"
+                      :class="
+                        this.$store.getters.getPage == 'home'
+                          ? 'active_link'
+                          : ''
+                      "
+                    >
                       <div class="link d-flex">
                         <div class="image">
                           <img src="../../assets/navbar/home.png" alt="" />
@@ -26,27 +33,34 @@
                     </router-link>
                   </li>
                   <li>
-                    <router-link to="/robots/1">
+                    <a href="/" @click.prevent="move('company_fields')">
                       <div class="link d-flex">
                         <div class="image">
                           <img src="../../assets//navbar/about.png" alt="" />
                         </div>
                         <span>عن روبوتيرا</span>
                       </div>
-                    </router-link>
+                    </a>
                   </li>
                   <li>
-                    <router-link to="/robot/details/1">
+                    <a href="/" @click.prevent="move('our_products')">
                       <div class="link d-flex">
                         <div class="image">
                           <img src="../../assets//navbar/products.png" alt="" />
                         </div>
                         <span>منتجاتنا</span>
                       </div>
-                    </router-link>
+                    </a>
                   </li>
                   <li>
-                    <router-link to="/robots">
+                    <router-link
+                      :class="
+                        this.$store.getters.getPage == 'store'
+                          ? 'active_link '
+                          : ''
+                      "
+                      to="/robots/:id"
+                    >
                       <div class="link d-flex">
                         <div class="image">
                           <img src="../../assets//navbar/shop.png" alt="" />
@@ -56,7 +70,14 @@
                     </router-link>
                   </li>
                   <li>
-                    <router-link to="/news">
+                    <router-link
+                      to="/news"
+                      :class="
+                        this.$store.getters.getPage == 'news'
+                          ? 'active_link '
+                          : ''
+                      "
+                    >
                       <div class="link d-flex">
                         <div class="image">
                           <img src="../../assets//navbar/news.png" alt="" />
@@ -95,7 +116,13 @@
           <div :class="['menue d-block d-lg-none', isTaggle ? 'active' : '']">
             <ul class="list-unstyled d-flex flex-column">
               <li>
-                <router-link to="/" @click="changeToggel">
+                <router-link
+                  to="/"
+                  :class="
+                    this.$store.getters.getPage == 'home' ? 'active_link ' : ''
+                  "
+                  @click="changeToggel"
+                >
                   <div class="link d-flex flex-column">
                     <div class="image">
                       <img src="../../assets/navbar/home.png" alt="" />
@@ -105,27 +132,33 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/robots/1" @click="changeToggel">
+                <a href="/" @click.prevent="move('company_fields')">
                   <div class="link d-flex flex-column">
                     <div class="image">
                       <img src="../../assets//navbar/about.png" alt="" />
                     </div>
                     <span>عن روبوتيرا</span>
                   </div>
-                </router-link>
+                </a>
               </li>
               <li>
-                <router-link to="/robot/details/1" @click="changeToggel">
+                <a href="/" @click.prevent="move('our_products')">
                   <div class="link d-flex flex-column">
                     <div class="image">
                       <img src="../../assets//navbar/products.png" alt="" />
                     </div>
                     <span>منتجاتنا</span>
                   </div>
-                </router-link>
+                </a>
               </li>
               <li>
-                <router-link to="/robots" @click="changeToggel">
+                <router-link
+                  to="/robots"
+                  :class="
+                    this.$store.getters.getPage == 'store' ? 'active_link ' : ''
+                  "
+                  @click="changeToggel"
+                >
                   <div class="link d-flex flex-column">
                     <div class="image">
                       <img src="../../assets//navbar/shop.png" alt="" />
@@ -145,7 +178,13 @@
                 </router-link>
               </li>
               <li>
-                <router-link to="/news " @click="changeToggel">
+                <router-link
+                  to="/news"
+                  :class="
+                    this.$store.getters.getPage == 'news' ? 'active_link ' : ''
+                  "
+                  @click="changeToggel"
+                >
                   <div class="link d-flex flex-column">
                     <div class="image">
                       <img src="../../assets//navbar/news.png" alt="" />
@@ -179,13 +218,7 @@
 <style lang="scss" scoped>
 @import "../../scss/variables.scss";
 .navbar {
-  a.router-link-exact-active {
-    .link {
-      flex-direction: column;
-      .image {
-        width: 43px !important;
-      }
-    }
+  a.active_link {
     span {
       color: #f7a633 !important;
     }
@@ -220,8 +253,17 @@
         .nav_wrapper {
           ul {
             justify-content: center;
+            li:nth-child(1) {
+              .link {
+                flex-direction: column;
+                .image {
+                  width: 43px !important;
+                }
+              }
+              margin-left: 25px;
+            }
             li {
-              margin: 0 18px;
+              margin: 0 16px;
               a {
                 .link {
                   .image {
@@ -487,8 +529,6 @@
   }
 }
 @media (max-width: 375px) {
-  .navbar {
-  }
 }
 </style>
 
@@ -520,6 +560,21 @@ export default {
           this.isFixed = false;
         }
       };
+    },
+    move(id) {
+      console.log(id);
+      let element = document.getElementById(id);
+      if (!element) {
+        this.$router.push("/");
+        setTimeout(() => {
+          element = document.getElementById(id);
+          let height = element.offsetTop - 90;
+          window.scrollTo(0, height);
+        });
+      } else {
+        let height = element.offsetTop - 90;
+        window.scrollTo(0, height);
+      }
     },
   },
   created() {

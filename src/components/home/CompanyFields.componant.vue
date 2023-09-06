@@ -1,5 +1,5 @@
 <template>
-  <section class="company_fields">
+  <section class="company_fields" id="company_fields">
     <div class="container">
       <header>
         <h5>عن روبوتيرا</h5>

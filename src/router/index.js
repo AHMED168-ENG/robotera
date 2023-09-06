@@ -10,56 +10,56 @@ import LoginPage from "../views/login.view.vue";
 import RegisterPage from "../views/register.view.vue";
 
 const routes = [
-    {
-        path: "/robot/details/:id",
-        name: "RobotDetails",
-        component: RobotDetailsPage,
-    },
-    {
-        path: "/",
-        name: "home",
-        component: HomeView,
-    },
-    {
-        path: "/robots/:id",
-        name: "RobotVideo",
-        component: RobotVideo,
-    },
-    {
-        path: "/robots",
-        name: "AllRobots",
-        component: AllRobots,
-    },
-    {
-        path: "/news",
-        name: "AllNewsView",
-        component: AllNewsView,
-    },
-    {
-        path: "/news/:id",
-        name: "NewsDetailsView",
-        component: NewsDetails,
-    },
-    {
-        path: "/contact",
-        name: "ContactUsView",
-        component: ContactUsView,
-    },
-    {
-        path: "/login",
-        name: "LoginPage",
-        component: LoginPage,
-    },
-    {
-        path: "/register",
-        name: "RegisterPage",
-        component: RegisterPage,
-    },
+  {
+    path: "/robot/details/:id",
+    name: "RobotDetails",
+    component: RobotDetailsPage,
+  },
+  {
+    path: "/",
+    name: "home",
+    component: HomeView,
+  },
+  {
+    path: "/robots/:id",
+    name: "RobotVideo",
+    component: RobotVideo,
+  },
+  {
+    path: "/robots",
+    name: "AllRobots",
+    component: AllRobots,
+  },
+  {
+    path: "/news",
+    name: "AllNewsView",
+    component: AllNewsView,
+  },
+  {
+    path: "/news/:id",
+    name: "NewsDetailsView",
+    component: NewsDetails,
+  },
+  {
+    path: "/contact",
+    name: "ContactUsView",
+    component: ContactUsView,
+  },
+  {
+    path: "/login",
+    name: "LoginPage",
+    component: LoginPage,
+  },
+  {
+    path: "/register",
+    name: "RegisterPage",
+    component: RegisterPage,
+  },
 ];
 
 const router = createRouter({
-    history: createWebHashHistory(),
-    routes,
+  history: createWebHashHistory(),
+  routes,
 });
 
 export default router;

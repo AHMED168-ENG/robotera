@@ -1,14 +1,14 @@
 <template>
-    <div class="allRobots">
-        <RobotGalaryComponent></RobotGalaryComponent>
-        <robotDescription></robotDescription>
-        <RobotsRelatedComponent></RobotsRelatedComponent>
-        <UpperFooterComponent></UpperFooterComponent>
-    </div>
+  <div class="allRobots">
+    <RobotGalaryComponent></RobotGalaryComponent>
+    <robotDescription></robotDescription>
+    <RobotsRelatedComponent></RobotsRelatedComponent>
+    <UpperFooterComponent></UpperFooterComponent>
+  </div>
 </template>
 <style lang="scss" scoped>
 .allRobots {
-    background: #e6f0f4;
+  background: #e6f0f4;
 }
 </style>
 <script>
@@ -18,18 +18,20 @@ import RobotsRelatedComponent from "@/components/robot_details/RobotsRelated.com
 import UpperFooterComponent from "@/components/layouts/UpprtFooter.component.vue";
 
 export default {
-    name: "RobotDetailsPage",
-    components: {
-        RobotGalaryComponent,
-        robotDescription,
-        RobotsRelatedComponent,
-        UpperFooterComponent,
-    },
-    created() {
-        window.scrollTo({
-            top: 0,
-            behavior: "instant",
-        });
-    },
+  name: "RobotDetailsPage",
+  components: {
+    RobotGalaryComponent,
+    robotDescription,
+    RobotsRelatedComponent,
+    UpperFooterComponent,
+  },
+  created() {
+    this.$store.commit("setPage", "store");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  },
 };
 </script>

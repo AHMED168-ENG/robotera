@@ -1,13 +1,13 @@
 <template>
-    <div class="home">
-        <LandingPageComponent></LandingPageComponent>
-        <CompanyFieldsComponant></CompanyFieldsComponant>
-        <OurProductsComponent></OurProductsComponent>
-        <NewsComponent></NewsComponent>
-        <RobotsComponent></RobotsComponent>
-        <OurSponserComponent></OurSponserComponent>
-        <UpperFooterComponent></UpperFooterComponent>
-    </div>
+  <div class="home">
+    <LandingPageComponent></LandingPageComponent>
+    <CompanyFieldsComponant></CompanyFieldsComponant>
+    <OurProductsComponent></OurProductsComponent>
+    <NewsComponent></NewsComponent>
+    <RobotsComponent></RobotsComponent>
+    <OurSponserComponent></OurSponserComponent>
+    <UpperFooterComponent></UpperFooterComponent>
+  </div>
 </template>
 
 <script>
@@ -20,21 +20,23 @@ import OurSponserComponent from "@/components/home/OurSponser.component.vue";
 import UpperFooterComponent from "@/components/layouts/UpprtFooter.component.vue";
 
 export default {
-    name: "HomeView",
-    components: {
-        LandingPageComponent,
-        CompanyFieldsComponant,
-        OurProductsComponent,
-        NewsComponent,
-        RobotsComponent,
-        OurSponserComponent,
-        UpperFooterComponent,
-    },
-    created() {
-        window.scrollTo({
-            top: 0,
-            behavior: "instant",
-        });
-    },
+  name: "HomeView",
+  components: {
+    LandingPageComponent,
+    CompanyFieldsComponant,
+    OurProductsComponent,
+    NewsComponent,
+    RobotsComponent,
+    OurSponserComponent,
+    UpperFooterComponent,
+  },
+  created() {
+    this.$store.commit("setPage", "home");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  },
 };
 </script>
