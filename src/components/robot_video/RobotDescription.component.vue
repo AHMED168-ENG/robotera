@@ -23,7 +23,7 @@
                   مثل الموتور والقطع الالكترونية مثل الحساسات والكاميرا واهمها
                   وحدة التحكم الرئيسية لهذا الروبوت وهي Arduino
                 </p>
-                <a href="" @click.prevent="openPdf('/catalog.pdf')"
+                <a href="" @click.prevent="openPdf('catalog.pdf')"
                   >عرض الكاتالوج
                 </a>
               </div>
