@@ -48,26 +48,9 @@
                         <div class="image">
                           <img src="../../assets//navbar/products.png" alt="" />
                         </div>
-                        <span>منتجاتنا</span>
+                        <span>خدماتنا</span>
                       </div>
                     </a>
-                  </li>
-                  <li>
-                    <router-link
-                      :class="
-                        this.$store.getters.getPage == 'store'
-                          ? 'active_link '
-                          : ''
-                      "
-                      to="/robots/:id"
-                    >
-                      <div class="link d-flex">
-                        <div class="image">
-                          <img src="../../assets//navbar/shop.png" alt="" />
-                        </div>
-                        <span>المتجر</span>
-                      </div>
-                    </router-link>
                   </li>
                   <li>
                     <router-link
@@ -83,6 +66,23 @@
                           <img src="../../assets//navbar/news.png" alt="" />
                         </div>
                         <span>الاخبار</span>
+                      </div>
+                    </router-link>
+                  </li>
+                  <li>
+                    <router-link
+                      :class="
+                        this.$store.getters.getPage == 'store'
+                          ? 'active_link '
+                          : ''
+                      "
+                      to="/store"
+                    >
+                      <div class="link d-flex">
+                        <div class="image">
+                          <img src="../../assets//navbar/shop.png" alt="" />
+                        </div>
+                        <span>المتجر</span>
                       </div>
                     </router-link>
                   </li>
@@ -147,7 +147,7 @@
                     <div class="image">
                       <img src="../../assets//navbar/products.png" alt="" />
                     </div>
-                    <span>منتجاتنا</span>
+                    <span>خدماتنا</span>
                   </div>
                 </a>
               </li>
@@ -282,7 +282,7 @@
                   span {
                     color: #3fa1d3;
                     font-family: Cairo;
-                    font-size: 13px;
+                    font-size: 14px;
                     font-style: normal;
                     font-weight: 600;
                     line-height: normal;

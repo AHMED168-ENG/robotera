@@ -6,7 +6,7 @@
           <div class="col-lg-5">
             <div class="info">
               <h5>خدماتنا</h5>
-              <h2>منتجاتنا متنوعة <br />وفريدة</h2>
+              <h2>خدماتنا متنوعة <br />وفريدة</h2>
               <div class="image">
                 <img src="../../assets/home/images/Vector7.png" alt="" />
               </div>

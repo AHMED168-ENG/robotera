@@ -8,6 +8,7 @@ import AllNewsView from "../views/News.view.vue";
 import ContactUsView from "../views/ContactUS.view.vue";
 import LoginPage from "../views/login.view.vue";
 import RegisterPage from "../views/register.view.vue";
+import StorePage from "../views/Store.view.vue";
 
 const routes = [
   {
@@ -54,6 +55,11 @@ const routes = [
     path: "/register",
     name: "RegisterPage",
     component: RegisterPage,
+  },
+  {
+    path: "/store",
+    name: "StorePage",
+    component: StorePage,
   },
 ];
 
